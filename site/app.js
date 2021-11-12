@@ -161,8 +161,12 @@ app.post("/login", function (req, res) {
     });
   } else {
     logger.debug("test mode login");
-    logger.info({ event: "login", userName: name, mode: mode });
-    console.log({ event: "login", userName: name, mode: mode });
+    var jsonLog = {
+      event: "login",
+      userName: name,
+      mode: mode,
+    };
+    console.log(jsonLog);
     res.send({ id: "test" });
   }
 });
