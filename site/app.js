@@ -7,7 +7,7 @@ var log4js = require("log4js");
 
 log4js.addLayout("json", function (config) {
   return function (logEvent) {
-    return JSON.stringify(logEvent) + config.separator;
+    return logEvent;
   };
 });
 
