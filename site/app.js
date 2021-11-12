@@ -7,7 +7,7 @@ var log4js = require("log4js");
 
 log4js.addLayout("json", function (config) {
   return function (logEvent) {
-    return logEvent;
+    return JSON.stringify(logEvent) + config.separator;
   };
 });
 
@@ -162,6 +162,7 @@ app.post("/login", function (req, res) {
   } else {
     logger.debug("test mode login");
     logger.info({ event: "login", userName: name, mode: mode });
+    console.log({ event: "login", userName: name, mode: mode });
     res.send({ id: "test" });
   }
 });
