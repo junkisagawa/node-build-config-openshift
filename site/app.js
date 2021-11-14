@@ -166,7 +166,7 @@ app.post("/login", function (req, res) {
       userName: name,
       mode: mode,
     };
-    console.log(jsonLog);
+    console.log(JSON.stringify(jsonLog));
     res.send({ id: "test" });
   }
 });
