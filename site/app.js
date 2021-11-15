@@ -13,7 +13,7 @@ log4js.addLayout("json", function (config) {
 
 log4js.configure({
   appenders: {
-    out: { type: "stdout", layout: { type: "json", separator: "," } },
+    out: { type: "stdout", layout: { type: "json", separator: "" } },
   },
   categories: {
     default: { appenders: ["out"], level: "info" },
